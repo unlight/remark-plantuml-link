@@ -9,9 +9,9 @@ gulp.task('build', sh`
     PATH="$PWD"/node_modules/.bin:$PATH
     rm -rf dist
     cp -rf src dist && /usr/bin/find dist -name '*.spec.ts' | xargs rm -f
-    pushd dist
-    tsc index.ts --target es2015 --module commonjs --sourceMap true --skipLibCheck true --declaration true
-    popd
+    cd dist
+    tsc unist.d.ts index.ts --target es2015 --module commonjs --sourceMap true --skipLibCheck true --declaration true
+    cd ..
     cp README.md LICENSE package.json dist
 `);
 
