@@ -2,14 +2,6 @@
 
 Generate a plantuml image link from text
 
-## Table of Contents
-
--   [Install](#install)
--   [Usage](#usage)
--   [Similar Projects](#similar-projects)
--   [Changelog](#changelog)
--   [License](#license)
-
 ## Install
 
 ```sh
@@ -22,10 +14,7 @@ npm install --save-dev remark-plantuml-link
 const remark = require('remark');
 const plantumlLink = require('remark-plantuml-link');
 const input = '<!-- ```plantuml\n(A)\n``` -->';
-const output = remark()
-    .use(plantumlLink)
-    .processSync(input)
-    .toString();
+const output = remark().use(plantumlLink).processSync(input).toString();
 ````
 
 Input:
@@ -46,10 +35,6 @@ Output:
 
 -   <https://github.com/BrekiTomasson/remark-plantuml>
 
-## Changelog
-
-See [CHANGELOG.md](CHANGELOG.md)
-
 ## License
 
-[MIT](LICENSE) © 2019
+[MIT](LICENSE)

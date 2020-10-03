@@ -1,3 +1,4 @@
 import { remarkPlantumlPlugin } from './remark-plantuml-plugin';
 
-export = remarkPlantumlPlugin;
+module.exports = remarkPlantumlPlugin;
+module.exports['default'] = remarkPlantumlPlugin;

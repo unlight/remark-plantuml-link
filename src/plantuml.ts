@@ -1,8 +1,9 @@
 import { Options } from './remark-plantuml-plugin';
 const plantumlEncoder = require('plantuml-encoder');
 
+// eslint-disable-next-line consistent-return
 export function getImageNode(html: string, options: Options) {
-    const matches = html.match(/<![-]{2,}\s+\u0060{3}([^\n]+)\s+([^]+)\s+\u0060{3}\s+[-]{2,}>/);
+    const matches = html.match(/<!-{2,}\s+`{3}([^\n]+)\s+([^]+)\s+`{3}\s+-{2,}>/);
     if (matches !== null && (matches[1] === 'plantuml' || matches[1] === 'puml')) {
         const body = matches[2];
         const encoded = plantumlEncoder.encode(body);
@@ -13,5 +14,4 @@ export function getImageNode(html: string, options: Options) {
             title: undefined,
         };
     }
-    return undefined;
 }

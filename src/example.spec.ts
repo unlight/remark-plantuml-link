@@ -1,23 +1,15 @@
-import * as expect from 'expect';
-const capcon = require('capture-console');
-let output = '';
+import expect from 'expect';
+
+import { CaptureConsole } from '@aoberoi/capture-console';
 
 describe('example', () => {
-
-    before(() => {
-        capcon.startCapture(process.stdout, function(stdout) {
-            output += stdout;
-        });
-    });
-
-    after(() => {
-        capcon.stopCapture(process.stdout);
-        expect(output).toContain('![](http://www.plantuml.com/plantuml/png/qt3K1000)');
-    });
+    const captureConsole = new CaptureConsole();
 
     it('example', () => {
+        captureConsole.startCapture();
         require('./example');
+        captureConsole.stopCapture();
+        const output = captureConsole.getCapturedText().join('\n');
+        expect(output).toContain('![](http://www.plantuml.com/plantuml/png/qt3K1000)');
     });
-
 });
-

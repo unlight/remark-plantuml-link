@@ -1,6 +1,12 @@
 {
+  "ts-node": {
+    "transpileOnly": true,
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  },
   "compilerOptions": {
-    "target": "es2015",
+    "target": "es2017",
     "module": "commonjs",
     "moduleResolution": "node",
     "importHelpers": true,
@@ -10,20 +16,13 @@
     "emitDecoratorMetadata": false,
     "outDir": "dist",
     "pretty": true,
+    "esModuleInterop": true,
     "removeComments": false,
-    "skipLibCheck": true,
     "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
-    "preserveWatchOutput": true,
-    "lib": [
-      "esnext"
-    ]
+    "declaration": false,
+    "declarationMap": false,
+    "skipLibCheck": true,
+    "lib": ["esnext"]
   },
-  "include": [
-    "src/**/*.ts"
-  ],
-  "exclude": [
-    "src/**/*.spec.ts"
-  ]
+  "include": ["src/**/*.ts"]
 }
