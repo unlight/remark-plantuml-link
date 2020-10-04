@@ -33,7 +33,9 @@ Output:
 
 ## Similar Projects
 
--   <https://github.com/BrekiTomasson/remark-plantuml>
+-   https://github.com/BrekiTomasson/remark-plantuml
+-   https://github.com/webgears/remarkable-plantuml
+-   https://github.com/akebifiky/remark-simple-plantuml
 
 ## License
 
